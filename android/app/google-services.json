@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549230863591",
+    "project_id": "covidpassport-ee5e7",
+    "storage_bucket": "covidpassport-ee5e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549230863591:android:38f73d143e063ebaa92e42",
+        "android_client_info": {
+          "package_name": "com.covpass.covpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549230863591-g65e0emia4g8ovpugb5tqid53qia062a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJAaGP0-gllufjlc957dh32dHs2PS5_7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549230863591-g65e0emia4g8ovpugb5tqid53qia062a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
