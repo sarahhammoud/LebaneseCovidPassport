@@ -100,7 +100,7 @@ class _TravelCardState extends State<TravelCard> {
                           : widget.travelCardModel.destination == 'Germany'
                               ? Uri.parse(
                                   "https://www.germany.info/us-en/covid-19/2321562")
-                              : widget.travelCardModel.destination == 'Lebanon'
+                              : widget.travelCardModel.destination == 'France'
                                   ? Uri.parse(
                                       "https://www.diplomatie.gouv.fr/en/coming-to-france/coronavirus-advice-for-foreign-nationals-in-france/")
                                   : Uri.parse(
