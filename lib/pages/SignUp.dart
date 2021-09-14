@@ -147,7 +147,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextFormField(
                         validator: validateName,
                         controller: _firstName,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'First Name - الاسم',
                           labelStyle: labelTextStyle,
@@ -156,7 +156,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextFormField(
                         validator: validateName,
                         controller: _fatherName,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: "Father's name - اسم الاب",
                           labelStyle: labelTextStyle,
@@ -165,7 +165,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextFormField(
                         validator: validateName,
                         controller: _lastName,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'Last name - الشهرة',
                           labelStyle: labelTextStyle,
@@ -173,7 +173,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       TextFormField(
                         controller: dateController,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           hintText: 'Pick your Date',
                           labelText: 'Birthday - تاريخ ميلادك',
@@ -199,7 +199,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         keyboardType: TextInputType.phone,
                         validator: validatePhoneNumber,
                         controller: _phoneNumber,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'Phone No - رقم الهاتف',
                           labelStyle: labelTextStyle,
@@ -209,7 +209,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         keyboardType: TextInputType.number,
                         validator: validateNationalIdNumber,
                         controller: _nationalId,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'National ID No - رقم الهوية الوطنية',
                           labelStyle: labelTextStyle,
@@ -218,7 +218,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextFormField(
                         validator: validateEmail,
                         controller: _email,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'Email - البريد الالكتروني',
                           labelStyle: labelTextStyle,
@@ -227,7 +227,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextFormField(
                         validator: validatePassword,
                         controller: _password,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'Password - كلمة السر',
                           labelStyle: labelTextStyle,
@@ -236,7 +236,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       TextFormField(
                         controller: _confirmPassword,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           labelText: 'Confirm Password - تأكيد كلمة السر',
                           labelStyle: labelTextStyle,
@@ -262,7 +262,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 15,
                       ),
                     ],
                   ),

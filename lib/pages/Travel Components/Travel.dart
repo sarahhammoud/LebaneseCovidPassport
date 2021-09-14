@@ -3,6 +3,7 @@ import 'package:covpass/models/databases/DataSource.dart';
 import 'package:covpass/pages/Travel%20Components/TravelCard.dart';
 import 'package:covpass/pages/Travel%20Components/TravelDialog.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TravelPage extends StatefulWidget {
   static const String id = 'travel_page';
@@ -18,13 +19,18 @@ class _TravelPageState extends State<TravelPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        physics: AlwaysScrollableScrollPhysics(),
-        itemCount: travelCards.length,
-        itemBuilder: (BuildContext context, int index) {
-          return TravelCard(travelCards[index]);
-        },
-      ),
+      body: travelCards.length == 0
+          ? Center(
+              child: Icon(FontAwesomeIcons.passport,
+                  size: 150, color: Colors.grey),
+            )
+          : ListView.builder(
+              physics: AlwaysScrollableScrollPhysics(),
+              itemCount: travelCards.length,
+              itemBuilder: (BuildContext context, int index) {
+                return TravelCard(travelCards[index]);
+              },
+            ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.add,

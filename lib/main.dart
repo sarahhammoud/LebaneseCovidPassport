@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'CovPass',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        fontFamily: 'Lato',
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: WelcomePage.id,

@@ -32,7 +32,7 @@ class _PCRTestPageState extends State<PCRTestPage> {
               children: [
                 Container(
                   alignment: Alignment.center,
-                  height: 250,
+                  height: 230,
                   margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                   decoration: BoxDecoration(
                       color: Color(0xFF0C1523),
@@ -51,13 +51,14 @@ class _PCRTestPageState extends State<PCRTestPage> {
                             height: 60,
                             child: CircleAvatar(
                               backgroundColor: Colors.transparent,
-                              radius: 10.0,
+                              radius: 15.0,
                               foregroundImage: AssetImage('assets/logo.jpg'),
                             ),
                           ),
                           Container(
-                            height: 90,
+                            height: 94,
                             child: VerticalDivider(
+                              thickness: 1.5,
                               color: Color(0xFF16C92F),
                             ),
                           ),
@@ -149,12 +150,12 @@ class _PCRTestPageState extends State<PCRTestPage> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              'Result: ' + widget.db.result,
+                              'Sample taken in: ' + widget.db.result,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 16.5),
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 10,
                             ),
                             Text(
                               'CT: ' + widget.db.ct,
@@ -162,19 +163,10 @@ class _PCRTestPageState extends State<PCRTestPage> {
                                   color: Colors.white, fontSize: 16.5),
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 10,
                             ),
                             Text(
-                              'Test Result reported by: ' +
-                                  widget.db.laboratory,
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 16.5),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              'Service Provided by: ' + widget.db.nurse,
+                              'Reported by: ' + widget.db.laboratory,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 16.5),
                             ),

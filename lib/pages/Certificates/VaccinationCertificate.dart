@@ -23,7 +23,7 @@ class _VaccinationCertificatePageState
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0),
         child: CovPassAppBar(
-          title: 'Vaccination Certificate',
+          title: 'Vaccination',
           actions: [],
           appbarColor: kDarkBlueColor,
         ),
@@ -36,8 +36,8 @@ class _VaccinationCertificatePageState
                 alignment: Alignment.center,
                 child: Image.asset(
                   'assets/logo.jpg',
-                  height: 130,
-                  width: 90,
+                  height: 120,
+                  width: 80,
                 ),
               ),
               Text(
@@ -50,7 +50,7 @@ class _VaccinationCertificatePageState
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 30,
               ),
               Container(
                 color: Color(0xFF16C92F),
@@ -110,7 +110,7 @@ class _VaccinationCertificatePageState
                       child: QrImage(
                         data: widget.db.certificate,
                         version: QrVersions.auto,
-                        size: 115.0,
+                        size: 99,
                         backgroundColor: Colors.white,
                         foregroundColor: Color.fromRGBO(12, 21, 35, 1.0),
                       ),

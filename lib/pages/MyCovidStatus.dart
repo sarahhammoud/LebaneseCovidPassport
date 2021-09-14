@@ -34,19 +34,23 @@ class _MyCovidStatusPageState extends State<MyCovidStatusPage> {
               child: widget.db.numberOfDoses == '0'
                   ? Column(
                       children: [
+                        SizedBox(
+                            height: widget.db.numberOfDoses == '0' ? 40 : 20),
                         Text(
                           "You're not vaccinated yet!",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 24,
                               fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 30),
                         Icon(
-                          FontAwesomeIcons.exclamationTriangle,
+                          FontAwesomeIcons.exclamationCircle,
                           color: Colors.white,
                           size: 100,
-                        )
+                        ),
+                        SizedBox(
+                            height: widget.db.numberOfDoses == '0' ? 45 : 35),
                       ],
                     )
                   : QrImage(
@@ -76,24 +80,25 @@ class _MyCovidStatusPageState extends State<MyCovidStatusPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(10),
-                    ),
-                    Text(
-                      widget.db.numberOfDoses == '0'
-                          ? 'HIGH RISK'
-                          : widget.db.numberOfDoses == '1'
-                              ? 'MEDIUM RISK'
-                              : 'LOW RISK',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w900),
+                      padding: const EdgeInsets.all(8),
+                      child: Text(
+                        widget.db.numberOfDoses == '0'
+                            ? 'HIGH RISK'
+                            : widget.db.numberOfDoses == '1'
+                                ? 'MEDIUM RISK'
+                                : 'LOW RISK',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w900),
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
+            SizedBox(height: 6),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Container(
@@ -107,7 +112,7 @@ class _MyCovidStatusPageState extends State<MyCovidStatusPage> {
                       padding: const EdgeInsets.all(10),
                       child: Icon(
                         FontAwesomeIcons.user,
-                        color: Colors.grey,
+                        color: Colors.white,
                         size: 20,
                         //icon
                       ),
@@ -141,16 +146,15 @@ class _MyCovidStatusPageState extends State<MyCovidStatusPage> {
                       ),
                     ),
                     Text(
-                      'Name: ' +
+                      'Name:   ' +
                           widget.db.firstName +
                           ' ' +
                           widget.db.fathersName +
                           ' ' +
                           widget.db.lastName +
-                          '\nBirthday: ' +
+                          '\nBirthday:   ' +
                           widget.db.birthday,
                       textAlign: TextAlign.left,
-                      style: covPassBodyTextStyle,
                     ),
                   ],
                 ),

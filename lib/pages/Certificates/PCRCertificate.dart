@@ -20,7 +20,7 @@ class _PCRCertificatePageState extends State<PCRCertificatePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0),
         child: CovPassAppBar(
-          title: 'PCR Test Certificate',
+          title: 'PCR Test',
           actions: [],
           appbarColor: kDarkBlueColor,
         ),
@@ -33,12 +33,12 @@ class _PCRCertificatePageState extends State<PCRCertificatePage> {
                 alignment: Alignment.center,
                 child: Image.asset(
                   'assets/logo.jpg',
-                  height: 130,
-                  width: 90,
+                  height: 120,
+                  width: 80,
                 ),
               ),
               Text(
-                'Covid-19 Vaccine Certificate',
+                'PCR Test Certificate',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 21,
@@ -47,7 +47,7 @@ class _PCRCertificatePageState extends State<PCRCertificatePage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 30,
               ),
               Container(
                 color: Color(0xFF16C92F),
@@ -107,7 +107,7 @@ class _PCRCertificatePageState extends State<PCRCertificatePage> {
                       child: QrImage(
                         data: widget.db.certificate,
                         version: QrVersions.auto,
-                        size: 115.0,
+                        size: 90.0,
                         backgroundColor: Colors.white,
                         foregroundColor: Color.fromRGBO(12, 21, 35, 1.0),
                       ),

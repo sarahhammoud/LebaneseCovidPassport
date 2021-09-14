@@ -10,7 +10,6 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  //TODO: animation screen before welcome
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -54,7 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   padding: const EdgeInsets.all(4.0),
                   child: RaisedButton(
                     child:
-                        Text('Create Account', style: TextStyle(fontSize: 18)),
+                        Text('Create Account', style: TextStyle(fontSize: 19)),
                     //new Image.asset(name),
 
                     color: kDarkBlueColor,
@@ -75,7 +74,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: RaisedButton(
-                    child: Text('Log in', style: TextStyle(fontSize: 18)),
+                    child: Text('Log in', style: TextStyle(fontSize: 19)),
                     color: kDarkBlueColor,
                     textColor: kGreenColor,
                     padding: EdgeInsets.all(20),

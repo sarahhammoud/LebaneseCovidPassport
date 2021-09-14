@@ -1,3 +1,4 @@
+import 'package:covpass/Constants.dart';
 import 'package:covpass/models/databases/DataBase.dart';
 import 'package:covpass/pages/Certificates/PCRCertificate.dart';
 import 'package:covpass/pages/Certificates/VaccinationCertificate.dart';
@@ -30,14 +31,14 @@ class _CertificatePageState extends State<CertificatePage> {
         child: SafeArea(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             SizedBox(
-              height: 275,
+              height: 250,
             ),
             Text(
               'Certificate',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 35,
-                color: Color.fromRGBO(12, 21, 35, 1.0),
+                color: kDarkBlueColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,25 +47,34 @@ class _CertificatePageState extends State<CertificatePage> {
             ),
             SizedBox(
               height: 60,
-              width: double.infinity,
-              child: RaisedButton(
+              width: width * 0.9,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
+                      side: BorderSide(color: kGreenColor),
+                    ),
+                  ),
+                ),
                 child: Text(
                   'Vaccination Certificate',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
+                    color: kDarkBlueColor,
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            VaccinationCertificatePage(db: widget.db),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          VaccinationCertificatePage(db: widget.db),
+                    ),
+                  );
                 },
-                color: Color.fromRGBO(12, 21, 35, 1.0),
-                textColor: Colors.white,
               ),
             ),
             SizedBox(
@@ -72,13 +82,23 @@ class _CertificatePageState extends State<CertificatePage> {
             ),
             SizedBox(
               height: 60,
-              width: double.infinity,
-              child: RaisedButton(
+              width: width * 0.9,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
+                      side: BorderSide(color: kGreenColor),
+                    ),
+                  ),
+                ),
                 child: Text(
                   'PCR Test Certificate',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
+                    color: kDarkBlueColor,
                   ),
                 ),
                 onPressed: () {
@@ -88,8 +108,6 @@ class _CertificatePageState extends State<CertificatePage> {
                         builder: (context) => PCRCertificatePage(db: widget.db),
                       ));
                 },
-                color: Color.fromRGBO(12, 21, 35, 1.0),
-                textColor: Colors.white,
               ),
             ),
           ]),

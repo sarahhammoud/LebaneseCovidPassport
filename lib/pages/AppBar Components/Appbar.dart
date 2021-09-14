@@ -15,15 +15,15 @@ class CovPassAppBar extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: Row(
           children: [
+            SizedBox(width: 24),
             Image.asset(
               'assets/logo.jpg',
               height: 45,
             ),
-            SizedBox(
-              width: 10,
-            ),
+            SizedBox(width: 14),
             Text(
               title,
+              style: TextStyle(fontSize: 17),
             )
           ],
         ),

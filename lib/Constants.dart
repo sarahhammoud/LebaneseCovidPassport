@@ -9,10 +9,5 @@ const String LogOut = 'Log out';
 
 const List<String> choices = <String>[EditProfile, settings, LogOut];
 
-const TextStyle covPassBodyTextStyle = TextStyle(
-  fontSize: 15,
-  color: Colors.grey,
-);
-
 const TextStyle labelTextStyle =
     TextStyle(color: kDarkBlueColor, fontWeight: FontWeight.bold);

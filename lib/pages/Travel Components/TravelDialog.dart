@@ -38,7 +38,7 @@ class _TravelDialogState extends State<TravelDialog> {
           Form(
             key: _formKey,
             child: Padding(
-              padding: const EdgeInsets.all(4),
+              padding: const EdgeInsets.all(1),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -175,14 +175,13 @@ class _TravelDialogState extends State<TravelDialog> {
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: ButtonTheme(
-                          minWidth: 50.0,
-                          height: 2.0,
+                          minWidth: 90.0,
                           child: RaisedButton(
                               child:
-                                  Text('Add', style: TextStyle(fontSize: 16)),
+                                  Text('Add', style: TextStyle(fontSize: 14)),
                               color: kDarkBlueColor,
                               textColor: Colors.white,
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(2),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(40.0)),
                               onPressed: () {
