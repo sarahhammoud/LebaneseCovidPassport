@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../Constants.dart';
+import '../Welcome.dart';
 import 'Appbar.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -11,8 +14,7 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  TextEditingController _username = new TextEditingController();
-  TextEditingController _email = new TextEditingController();
+  TextEditingController _id = new TextEditingController();
   TextEditingController _phone = new TextEditingController();
   final dateController = new TextEditingController();
 
@@ -49,29 +51,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Username',
+                      'ID Number',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color(0xFF0C1523),
                       ),
                     ),
                     TextField(
-                      controller: _username,
-                      cursorColor: Color(0xFF16C92F),
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Email',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF0C1523),
-                      ),
-                    ),
-                    TextField(
-                      controller: _email,
+                      controller: _id,
                       cursorColor: Color(0xFF16C92F),
                       style: TextStyle(fontSize: 16),
                     ),
@@ -131,7 +118,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           borderRadius: BorderRadius.circular(40),
                         ),
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            final String uid =
+                                FirebaseAuth.instance.currentUser!.uid;
+
+                            await FirebaseFirestore.instance
+                                .collection('VaccinationData')
+                                .doc(uid)
+                                .update({
+                              'Birthday': dateController.text,
+                              'Phone': _phone.text,
+                              'ID': _id.text
+                            });
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WelcomePage()));
+                          },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 16.0),
                             child: Text(

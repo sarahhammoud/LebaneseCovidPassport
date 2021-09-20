@@ -1,4 +1,6 @@
 import 'package:covpass/Constants.dart';
+import 'package:covpass/pages/Welcome.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'Appbar.dart';
@@ -11,9 +13,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  TextEditingController _oldPassword = new TextEditingController();
-  TextEditingController _newPassword = new TextEditingController();
-  TextEditingController _confirmpass = new TextEditingController();
+  TextEditingController _email = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,43 +52,17 @@ class _SettingsPageState extends State<SettingsPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextField(
-                      controller: _oldPassword,
-                      obscureText: true,
+                      controller: _email,
                       cursorColor: Color(0xFF16C92F),
                       decoration: InputDecoration(
-                        hintText: 'Old Password',
-                        suffixIcon: Icon(Icons.visibility_off),
+                        hintText:
+                            'Enter the email to verify and change password',
+                        //suffixIcon: Icon(Icons.visibility_off),
                       ),
                       style: TextStyle(fontSize: 16),
                     ),
                     SizedBox(
                       height: 10,
-                    ),
-                    TextField(
-                      controller: _newPassword,
-                      obscureText: true,
-                      cursorColor: Color(0xFF16C92F),
-                      decoration: InputDecoration(
-                        hintText: 'New Password',
-                        suffixIcon: Icon(Icons.visibility_off),
-                      ),
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      controller: _confirmpass,
-                      obscureText: true,
-                      cursorColor: Color(0xFF16C92F),
-                      decoration: InputDecoration(
-                        hintText: 'Confirm Password',
-                        suffixIcon: Icon(Icons.visibility_off),
-                      ),
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 25,
                     ),
                     Align(
                       alignment: Alignment.center,
@@ -101,7 +75,18 @@ class _SettingsPageState extends State<SettingsPage> {
                           borderRadius: BorderRadius.circular(40),
                         ),
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            var firebaseUser =
+                                FirebaseAuth.instance.currentUser;
+                            if (firebaseUser!.email == _email.text) {
+                              FirebaseAuth.instance
+                                  .sendPasswordResetEmail(email: _email.text);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => WelcomePage()));
+                            }
+                          },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 16.0),
                             child: Text(
