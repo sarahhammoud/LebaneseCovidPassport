@@ -34,7 +34,6 @@ class _SignUpPageState extends State<SignUpPage> {
       UserCredential FBUser = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
               email: _email.text, password: _password.text);
-      print('signed-up : ${FBUser.user!.uid}');
 
       //FireCloud Data Adding.
       DataBaseService db = new DataBaseService(uid: FBUser.user!.uid);
@@ -110,6 +109,10 @@ class _SignUpPageState extends State<SignUpPage> {
   void passwordsValidation() {
     if (_password.text == _confirmPassword.text) {
       submit();
+      final snackBar = SnackBar(
+        content: const Text('Creating your account...'),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else {
       final snackBar = SnackBar(
         content: const Text('Passwords Mis-match!'),

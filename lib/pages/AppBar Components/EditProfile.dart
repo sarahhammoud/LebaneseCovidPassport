@@ -14,9 +14,7 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  TextEditingController _id = new TextEditingController();
   TextEditingController _phone = new TextEditingController();
-  final dateController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,18 +48,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'ID Number',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF0C1523),
-                      ),
-                    ),
-                    TextField(
-                      controller: _id,
-                      cursorColor: Color(0xFF16C92F),
-                      style: TextStyle(fontSize: 16),
-                    ),
                     SizedBox(
                       height: 20,
                     ),
@@ -77,33 +63,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       keyboardType: TextInputType.number,
                       cursorColor: Color(0xFF16C92F),
                       style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Date of Birth',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF0C1523),
-                      ),
-                    ),
-                    TextField(
-                      controller: dateController,
-                      cursorColor: Color(0xFF16C92F),
-                      style: TextStyle(fontSize: 16),
-                      decoration: InputDecoration(hintText: 'Pick your Date'),
-                      onTap: () async {
-                        var date = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime(1800),
-                          lastDate: DateTime(2022),
-                          errorFormatText: 'Enter valid date',
-                          errorInvalidText: 'Enter date in valid range',
-                        );
-                        dateController.text = date.toString().substring(0, 10);
-                      },
                     ),
                     SizedBox(
                       height: 50,
@@ -126,9 +85,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                 .collection('VaccinationData')
                                 .doc(uid)
                                 .update({
-                              'Birthday': dateController.text,
                               'Phone': _phone.text,
-                              'ID': _id.text
                             });
                             Navigator.push(
                                 context,

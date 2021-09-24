@@ -78,7 +78,7 @@ class _NotVaccinatedState extends State<NotVaccinated> {
                   backgroundColor: MaterialStateProperty.all(
                       Color.fromRGBO(22, 21, 47, 1.0)),
                 ),
-                onPressed: () {},
+                onPressed: followLink,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: Text(
