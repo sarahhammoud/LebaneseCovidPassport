@@ -150,7 +150,7 @@ class _PCRTestPageState extends State<PCRTestPage> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              'Sample taken in: ' + widget.db.result,
+                              'Sample taken in: ' + widget.db.date,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 16.5),
                             ),

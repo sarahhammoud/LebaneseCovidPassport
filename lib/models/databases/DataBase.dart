@@ -17,7 +17,7 @@ class DataBaseService {
   String secondDoseDate = '';
   String certificate = '';
   String ct = '';
-  String nurse = '';
+  String date = '';
   String laboratory = '';
   String result = '';
   DataBaseService({required this.uid});
@@ -48,7 +48,7 @@ class DataBaseService {
       'Result': '',
       'CT': '',
       'Laboratory': '',
-      'Nurse': '',
+      'Date': '',
     });
   }
 
@@ -74,7 +74,7 @@ class DataBaseService {
       certificate = value.data()!["Certificate"];
       ct = value.data()!["CT"];
       result = value.data()!["Result"];
-      nurse = value.data()!["Nurse"];
+      date = value.data()!["Date"];
       laboratory = value.data()!["Laboratory"];
     });
   }

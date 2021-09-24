@@ -153,7 +153,7 @@ class _PCRCertificatePageState extends State<PCRCertificatePage> {
                           ),
                         ),
                         Text(
-                          'Service Provided by: ' + widget.db.nurse,
+                          'Sample taken in ' + widget.db.date,
                           style: TextStyle(
                             fontSize: 15,
                           ),
